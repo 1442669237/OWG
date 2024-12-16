@@ -1,15 +1,24 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <button
+      v-for="(i, index) of 3"
+      :key="index"
+      type="button"
+      class="btn btn-primary"
+    >
+      {{ i }}
+    </button>
   </div>
 </template>
 
 <style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
+.about {
+  width: 100vw;
+  height: 30px;
+  background: yellowgreen;
+  text-align: center;
+  line-height: 30px;
+  display: flex;
+  justify-content: space-around;
 }
 </style>
