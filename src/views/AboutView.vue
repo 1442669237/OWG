@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <button
-      v-for="(i, index) of 3"
+      v-for="(i, index) of 4"
       :key="index"
       type="button"
       class="btn btn-primary"
