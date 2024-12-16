@@ -9,12 +9,11 @@ import about from "./views/AboutView.vue";
       <about />
     </header>
   </div>
+  <RouterLink to="/">Home</RouterLink>
+  <RouterLink to="/about">About</RouterLink>
   <div class="flex">
     <RouterView />
   </div>
-
-  <RouterLink to="/">Home</RouterLink>
-  <RouterLink to="/about">About</RouterLink>
 </template>
 
 <style scoped>
