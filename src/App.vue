@@ -1,6 +1,12 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import about from "./views/AboutView.vue";
+import { onMounted } from "vue";
+import { aaa } from "@/api/app.js";
+// const aa()=>{
+
+// }
+onMounted(aaa);
 </script>
 
 <template>

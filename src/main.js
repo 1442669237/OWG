@@ -9,6 +9,8 @@ import router from './router'
 // 引入Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+// 引入 normalize.css
+import './assets/normalize.css';
 
 const app = createApp(App)
 
