@@ -2,26 +2,45 @@ import { fileURLToPath, URL } from 'node:url'
 
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
-
+import viewport from 'postcss-mobile-forever'
 
 import { defineConfig } from 'vite'
+
+// 按需引入element-plus
 import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import Components from 'unplugin-vue-components/vite';
+import { VantResolver } from '@vant/auto-import-resolver';
 
-
-// https://vite.dev/config/
 export default defineConfig({
+
   plugins: [
     vue(),
     vueDevTools(),
     AutoImport({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [VantResolver()],
     }),
     Components({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [VantResolver()],
     }),
   ],
+  css: {
+    postcss: {
+      plugins: [
+        // autoprefixer(),
+        // https://github.com/wswmsword/postcss-mobile-forever
+        viewport({
+          appSelector: '#app',
+          viewportWidth: 750,
+          maxDisplayWidth: 1200,
+          // rootContainingBlockSelectorList: [
+          //   'van-tabbar',
+          //   'van-popup',
+          // ],
+          border: true,
+        }),
+      ],
+    },
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

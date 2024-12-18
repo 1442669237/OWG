@@ -15,6 +15,7 @@ onMounted(aaa);
       <about />
     </header>
   </div>
+  <van-button type="primary">按钮</van-button>
   <RouterLink to="/">Home</RouterLink>
   <RouterLink to="/about">About</RouterLink>
   <div class="flex">

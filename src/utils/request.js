@@ -4,8 +4,8 @@ const service = axios.create({
     baseURL: import.meta.env.VITE_APP_URL, // 基础URL，可以在.env文件中配置
     timeout: 5000 // 请求超时时间
 });
-
-
+import { showNotify, showToast } from 'vant'
+console.log(showNotify)
 // 请求拦截器
 service.interceptors.request.use(
     config => {
@@ -53,10 +53,10 @@ service.interceptors.response.use(
         }
     },
     error => {
-        ElMessage({
-            message: error.message,
-            type: 'error',
-            plain: true,
+        showNotify({ type: 'success', message: '通知内容' });
+
+        showToast({
+            message: 'This message will contain a incomprehensibilities long word.'
         })
         return Promise.reject(error);
     }
